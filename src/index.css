@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +8,42 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Tùy chỉnh các lớp của Ant Design */
+.ant-btn, 
+.ant-input, 
+.ant-select, 
+.ant-card {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Ví dụ tùy chỉnh cho các thành phần khác */
+.ant-typography, 
+.ant-menu {
+  font-family: 'Poppins', sans-serif;
+}
+
+.homepage-content-app {
+  margin: 0px 70px;
+}
+
+.ant-btn {
+  padding: 25px 20px;
+}
+
+.content-page-app{
+  margin: 50px 70px;
+}
+
+.p-0{
+  padding: 0px ;
+}
+
+.m-0 {
+  margin: 0px;
+}
+
+.ant-form-item-explain-error{
+  margin-top: 5px;
 }

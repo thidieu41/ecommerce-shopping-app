@@ -1,0 +1,133 @@
+/* Homepage */
+.home-page-content {
+  margin: 20px 0px 50px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* Banner */
+
+.flex-side-bar-menu {
+  flex-direction: column;
+  gap: 15px;
+  padding-right: 20px;
+}
+
+.divide-banner-header {
+  margin: 0;
+}
+
+.content-baner {
+  margin-top: 30px;
+}
+
+.carousel-custom .ant-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  padding-left: 80px;
+}
+
+
+/* Flase Sale */
+.flash-sale-app {
+  margin-top: 50px;
+}
+
+.flash-sale-all-products {
+  margin: 50px 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.flash-sale-all-products .ant-btn {
+  margin: auto;
+  width: 20%;
+  font-weight: 600;
+}
+
+/* Category */
+.categories-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.category-card {
+  width: 100%;
+  text-align: center;
+  border: 1px solid #0000004d;
+}
+
+.category-card .ant-typography {
+  margin-top: 15px;
+}
+
+.category-card:hover {
+  background-color: #db4444;
+  border: none;
+}
+.category-card:hover .ant-typography {
+  color: white;
+}
+
+/* Best Seller */
+.best-seller-view-all-btn {
+  font-weight: 600;
+  width: 150px;
+}
+
+/* Experience */
+.expericent-time {
+  flex-direction: column;
+}
+
+.experience-content {
+  background-color: black;
+  margin: 40px 0px;
+}
+
+.experience-title {
+  color: #db4444;
+  font-weight: 600;
+}
+
+.experience-subtitle {
+  color: white;
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.experience-image {
+  width: 60px !important;
+  height: 60px !important;
+}
+
+.experience-title-content {
+  padding: 60px 80px;
+}
+
+.time-list-box {
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.experience-banner-content {
+  background-image: url("../../../public/assets/images/experience/bgbanner.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+.experience-banner-content .ant-image {
+  width: 95%;
+}
+
+.experience-btn {
+  height: 50px;
+  margin-top: 40px;
+  width: 40%;
+}
+
+/* Featered */

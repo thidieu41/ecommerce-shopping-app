@@ -1,0 +1,89 @@
+/* Footer */
+.footer-app {
+  color: white;
+  background-color: black;
+  padding: 70px;
+}
+
+.footer-app .ant-typography {
+  color: white;
+}
+
+.custom-input-footer {
+  border-radius: 0;
+  border: 1px solid white;
+  color: white;
+  padding: 7px 10px;
+}
+
+.custom-input-footer::placeholder {
+  color: #ff0000 !important;
+  opacity: 1;
+}
+
+.download-app {
+  flex-direction: column;
+}
+
+.download-text {
+  font-size: 10px;
+}
+
+.submenu-content {
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Header */
+.header-title-app {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0px;
+  gap: 5px;
+}
+
+.header-text-title {
+  font-size: 12;
+  color: white;
+}
+
+.header-link-shop {
+  font-weight: 600;
+}
+
+.header-menu-bar {
+  margin: 30px 70px 0px 70px;
+}
+
+.search-input-style-custom {
+  max-width: 70%;
+  border-radius: 0;
+  background: #f5f5f5;
+  padding: 8px 15px;
+  float: right;
+}
+
+.header-bar-user-profile{
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+ 
+.header-btn-custom {
+  padding: 0px;
+}
+
+.header-title-link{
+  cursor: pointer;
+  font-size: 20px;
+  color: black !important;
+  font-weight: 600;
+}
+
+.header-menu-link {
+  color: black !important;
+  cursor: pointer;
+}
+

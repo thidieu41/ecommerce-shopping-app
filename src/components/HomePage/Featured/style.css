@@ -1,0 +1,35 @@
+.feater-app .ant-image {
+    width: 100%;
+    padding: 18px;
+  }
+  
+  .featered-services-app{
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+  
+  .featered-services-item{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .featered-services-item .ant-image-img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+   
+  }
+  
+  .services-title{
+    font-weight: 600;
+    font-size: 13px;
+  }
+  
+  .services-sub{
+    font-size: 10px;
+  }
