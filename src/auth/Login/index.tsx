@@ -1,11 +1,23 @@
-import { Col, Row, Image, Flex, Typography, Form, Input, Button } from "antd";
+import {
+  Col,
+  Row,
+  Image,
+  Flex,
+  Typography,
+  Form,
+  Input,
+  Button,
+  notification,
+} from "antd";
 import "../style.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { handleNotification } from "../../shared/function";
 
 const { Title, Link } = Typography;
 
 interface IProps {
   name: string;
-  email_phone: string;
   password: string;
 }
 
@@ -15,8 +27,30 @@ const layout = {
 };
 
 const Login = () => {
-  const onFinish = (data: IProps) => {
-    console.log(data, "data");
+  const navigate = useNavigate();
+  const onFinish = (payload: IProps) => {
+    axios
+      .get(`http://localhost:3000/user?name=${payload.name}`)
+      .then((res) => {
+
+        const { data } = res;
+
+        const dataLogin = data.find(
+          (item: IProps) => item.password === payload.password
+        );
+        
+        if (!!dataLogin) {
+          localStorage.setItem("user", JSON.stringify(dataLogin));
+          handleNotification("Login successful!", "success");
+          navigate("/");
+        }
+      })
+      .catch(() => {
+        handleNotification(
+          "Name or Password is wrong! Please relogin again!",
+          "error"
+        );
+      });
   };
 
   return (
@@ -24,7 +58,7 @@ const Login = () => {
       <Row
         style={{
           marginTop: 50,
-          marginBottom:50
+          marginBottom: 50,
         }}
       >
         <Col span={14}>
@@ -58,18 +92,7 @@ const Login = () => {
             >
               <Input placeholder="Name" variant="borderless" />
             </Form.Item>
-            <Form.Item
-              name="email_phone"
-              rules={[
-                {
-                  required: true,
-                  message: "Please enter your email or phone number!",
-                },
-              ]}
-              className="custom-input-style"
-            >
-              <Input placeholder="Email or Phone Number" variant="borderless" />
-            </Form.Item>
+
             <Form.Item
               name="password"
               rules={[
@@ -91,10 +114,10 @@ const Login = () => {
                   type="primary"
                   htmlType="submit"
                   style={{
-                    maxWidth:'35%'
+                    maxWidth: "35%",
                   }}
                 >
-                 Login
+                  Login
                 </Button>
                 <Link className="forgot-pw">Forgot Password ?</Link>
               </Flex>

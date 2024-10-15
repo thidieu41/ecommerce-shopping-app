@@ -41,7 +41,6 @@ const menuBanner = [
   },
 ];
 
-
 const carouselList = [
   {
     url: "assets/images/banner/B1.webp",
@@ -66,8 +65,8 @@ export const Banner = () => {
           <Col span={5} className="content-baner">
             <Flex className="flex-side-bar-menu">
               {menuBanner.map((menu, index) => (
-                <Flex align="center" justify="space-between">
-                  <Typography key={index}>{menu.title}</Typography>
+                <Flex align="center" justify="space-between" key={index}>
+                  <Typography>{menu.title}</Typography>
                   {menu.isIcon && <RightOutlined />}
                 </Flex>
               ))}
@@ -84,10 +83,7 @@ export const Banner = () => {
           <Col span={18} className="content-baner">
             <Carousel autoplay className="carousel-custom">
               {carouselList.map((item, index) => (
-                  <Image
-                    preview={false}
-                    src={item.url}
-                  />
+                <Image preview={false} src={item.url} key={index} />
               ))}
             </Carousel>
           </Col>

@@ -1,12 +1,25 @@
-import { Col, Row, Image, Flex, Typography, Form, Input, Button } from "antd";
-import'../style.css';
+import {
+  Col,
+  Row,
+  Image,
+  Flex,
+  Typography,
+  Form,
+  Input,
+  Button,
+  notification,
+} from "antd";
+import axios from "axios";
+import "../style.css";
+import { useNavigate } from "react-router-dom";
+import { handleNotification } from "../../shared/function";
 
 const { Title, Link } = Typography;
 
 interface IProps {
-    name:string;
-    email_phone:string;
-    password:string
+  name: string;
+  email: string;
+  password: string;
 }
 
 const layout = {
@@ -14,19 +27,27 @@ const layout = {
   wrapperCol: { span: 17 },
 };
 
-
 const RegisterComp = () => {
+  const navigate = useNavigate();
 
-    const onFinish = (data: IProps) =>{
-        console.log(data, 'data');
-    }
+  const onFinish = async (data: IProps) => {
+    axios
+      .post("http://localhost:3000/user", data)
+      .then(function (response) {
+        handleNotification("Register new account successfully", "success");
+        navigate("/login");
+      })
+      .catch(function (error) {
+        handleNotification("Register Failed!", "error");
+      });
+  };
 
   return (
     <>
       <Row
         style={{
           marginTop: 50,
-          marginBottom:50
+          marginBottom: 50,
         }}
       >
         <Col span={14}>
@@ -61,16 +82,16 @@ const RegisterComp = () => {
               <Input placeholder="Name" variant="borderless" />
             </Form.Item>
             <Form.Item
-              name="email_phone"
+              name="email"
               rules={[
                 {
                   required: true,
-                  message: "Please enter your email or phone number!",
+                  message: "Please enter your email!",
                 },
               ]}
               className="custom-input-style"
             >
-              <Input placeholder="Email or Phone Number" variant="borderless" />
+              <Input placeholder="Email" variant="borderless" />
             </Form.Item>
             <Form.Item
               name="password"
@@ -87,12 +108,21 @@ const RegisterComp = () => {
             </Form.Item>
 
             <Form.Item className="btn-form-style">
-              <Button className="buttonSumitStyle" type="primary"  htmlType='submit'>
+              <Button
+                className="buttonSumitStyle"
+                type="primary"
+                htmlType="submit"
+              >
                 Create Account
               </Button>
-              <Button className="buttonSumitStyle" style={{
-                marginTop:20
-              }}>Sign up with Google</Button>
+              <Button
+                className="buttonSumitStyle"
+                style={{
+                  marginTop: 20,
+                }}
+              >
+                Sign up with Google
+              </Button>
             </Form.Item>
             <Form.Item>
               <Flex align="center" justify="center" gap={10}>
